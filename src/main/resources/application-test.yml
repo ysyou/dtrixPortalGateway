@@ -1,0 +1,29 @@
+server:
+  port: 8088
+
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods: "*"
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+eureka:
+  instance:
+    #    hostname: RL-PC
+    #    ip-address: 192.168.0.135
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://192.168.219.135:8761/eureka/  #,http://192.168.0.141:8761/eureka/,http://192.168.0.142:8761/eureka/
+
