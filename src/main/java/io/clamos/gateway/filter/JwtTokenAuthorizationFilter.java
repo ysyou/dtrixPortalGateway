@@ -44,12 +44,12 @@ public class JwtTokenAuthorizationFilter implements WebFilter {
 
                 // TODO: 05-19 token password update date check
 
-                String userId = String.valueOf(claims.get("id"));
-                Consumer<HttpHeaders> headers = httpHeaders -> {
-//                    httpHeaders.add("id", userId);
-                    httpHeaders.set("id", userId);
-                };
-                request.mutate().headers(headers).build();
+//                String userId = String.valueOf(claims.get("id"));
+//                Consumer<HttpHeaders> headers = httpHeaders -> {
+////                    httpHeaders.add("id", userId);
+//                    httpHeaders.set("id", userId);
+//                };
+//                request.mutate().headers(headers).build();
 
 //                Collection<? extends GrantedAuthority> authorities = authoritiesClaim == null ? AuthorityUtils.NO_AUTHORITIES : AuthorityUtils.commaSeparatedStringToAuthorityList(authoritiesClaim.toString());
                 Collection<? extends GrantedAuthority> authorities = AuthorityUtils.NO_AUTHORITIES;
